@@ -131,7 +131,7 @@ export const OrderTrackingPage: React.FC = () => {
                 <span className="text-zinc-300 truncate max-w-[200px]">
                   {item.name} <span className="font-bold text-zinc-500">x{item.quantity}</span>
                 </span>
-                <span className="font-bold text-zinc-100">${(item.price_at_order_time * item.quantity).toFixed(2)}</span>
+                <span className="font-bold text-zinc-100">₹{(item.price_at_order_time * item.quantity).toFixed(2)}</span>
               </div>
             ))}
           </div>
@@ -139,19 +139,19 @@ export const OrderTrackingPage: React.FC = () => {
           <div className="border-t border-zinc-800 pt-3 space-y-1.5 text-xs text-zinc-400">
             <div className="flex justify-between">
               <span>Subtotal</span>
-              <span className="font-bold text-zinc-200">${order.subtotal_amount.toFixed(2)}</span>
+              <span className="font-bold text-zinc-200">₹{order.subtotal_amount.toFixed(2)}</span>
             </div>
             <div className="flex justify-between">
               <span>Tax</span>
-              <span className="font-bold text-zinc-200">${order.tax_amount.toFixed(2)}</span>
+              <span className="font-bold text-zinc-200">₹{order.tax_amount.toFixed(2)}</span>
             </div>
             <div className="flex justify-between">
               <span>Delivery Fee</span>
-              <span className="font-bold text-zinc-200">${order.delivery_fee.toFixed(2)}</span>
+              <span className="font-bold text-zinc-200">₹{order.delivery_fee.toFixed(2)}</span>
             </div>
             <div className="flex justify-between text-sm font-black text-zinc-100 pt-2 border-t border-zinc-800 font-['Outfit']">
               <span>Total Paid</span>
-              <span className="text-brand-400">${order.total_amount.toFixed(2)}</span>
+              <span className="text-brand-400">₹{order.total_amount.toFixed(2)}</span>
             </div>
           </div>
 
