@@ -117,9 +117,9 @@ export const InvoiceReceiptModal: React.FC<InvoiceReceiptModalProps> = ({
                       )}
                     </td>
                     <td className="py-2.5 text-center font-semibold text-zinc-700">{item.quantity}</td>
-                    <td className="py-2.5 text-right text-zinc-600">${Number(item.price_at_order_time).toFixed(2)}</td>
+                    <td className="py-2.5 text-right text-zinc-600">₹{Number(item.price_at_order_time).toFixed(2)}</td>
                     <td className="py-2.5 text-right font-bold text-zinc-900">
-                      ${(Number(item.price_at_order_time) * item.quantity).toFixed(2)}
+                      ₹{(Number(item.price_at_order_time) * item.quantity).toFixed(2)}
                     </td>
                   </tr>
                 ))}
@@ -131,29 +131,29 @@ export const InvoiceReceiptModal: React.FC<InvoiceReceiptModalProps> = ({
           <div className="border-t border-zinc-200 pt-4 space-y-1.5 text-xs">
             <div className="flex justify-between text-zinc-600">
               <span>Item Subtotal</span>
-              <span className="font-medium">${Number(order.subtotal_amount).toFixed(2)}</span>
+              <span className="font-medium">₹{Number(order.subtotal_amount).toFixed(2)}</span>
             </div>
 
             {order.discount_amount && order.discount_amount > 0 ? (
               <div className="flex justify-between text-emerald-600 font-bold">
                 <span>Promo Discount ({order.coupon_code || 'COUPON'})</span>
-                <span>-${Number(order.discount_amount).toFixed(2)}</span>
+                <span>-₹{Number(order.discount_amount).toFixed(2)}</span>
               </div>
             ) : null}
 
             <div className="flex justify-between text-zinc-600">
               <span>Applicable Taxes & GST (5%)</span>
-              <span className="font-medium">${Number(order.tax_amount).toFixed(2)}</span>
+              <span className="font-medium">₹{Number(order.tax_amount).toFixed(2)}</span>
             </div>
 
             <div className="flex justify-between text-zinc-600">
               <span>Express Delivery Surcharge</span>
-              <span className="font-medium">${Number(order.delivery_fee).toFixed(2)}</span>
+              <span className="font-medium">₹{Number(order.delivery_fee).toFixed(2)}</span>
             </div>
 
             <div className="flex justify-between text-base font-black text-zinc-900 border-t-2 border-zinc-900 pt-2.5 mt-2">
               <span>Total Paid</span>
-              <span className="text-orange-600">${Number(order.total_amount).toFixed(2)}</span>
+              <span className="text-orange-600">₹{Number(order.total_amount).toFixed(2)}</span>
             </div>
           </div>
 
