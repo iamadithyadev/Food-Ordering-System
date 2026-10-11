@@ -195,7 +195,7 @@ export const RestaurantPage: React.FC = () => {
                             </h4>
                           </div>
 
-                          <p className="text-xs font-black text-brand-400">${item.price.toFixed(2)}</p>
+                          <p className="text-xs font-black text-brand-400">₹{item.price.toFixed(2)}</p>
                           <p className="text-xs text-zinc-400 line-clamp-2 leading-relaxed">{item.description}</p>
                         </div>
 
