@@ -210,7 +210,7 @@ export const CheckoutPage: React.FC = () => {
                   <span className="text-zinc-300 truncate max-w-[160px]">
                     {item.name} <span className="font-bold text-zinc-500">x{item.quantity}</span>
                   </span>
-                  <span className="font-bold text-zinc-100">${(item.price * item.quantity).toFixed(2)}</span>
+                  <span className="font-bold text-zinc-100">₹{(item.price * item.quantity).toFixed(2)}</span>
                 </div>
               ))}
             </div>
@@ -218,19 +218,19 @@ export const CheckoutPage: React.FC = () => {
             <div className="border-t border-zinc-800 pt-3 space-y-1.5 text-xs text-zinc-400">
               <div className="flex justify-between">
                 <span>Subtotal</span>
-                <span className="font-bold text-zinc-200">${summary.subtotal.toFixed(2)}</span>
+                <span className="font-bold text-zinc-200">₹{summary.subtotal.toFixed(2)}</span>
               </div>
               <div className="flex justify-between">
                 <span>Tax (5%)</span>
-                <span className="font-bold text-zinc-200">${summary.tax.toFixed(2)}</span>
+                <span className="font-bold text-zinc-200">₹{summary.tax.toFixed(2)}</span>
               </div>
               <div className="flex justify-between">
                 <span>Delivery Fee</span>
-                <span className="font-bold text-zinc-200">${summary.deliveryFee.toFixed(2)}</span>
+                <span className="font-bold text-zinc-200">₹{summary.deliveryFee.toFixed(2)}</span>
               </div>
               <div className="flex justify-between text-sm font-black text-zinc-100 pt-2 border-t border-zinc-800 font-['Outfit']">
                 <span>Total Payable</span>
-                <span className="text-brand-400">${summary.total.toFixed(2)}</span>
+                <span className="text-brand-400">₹{summary.total.toFixed(2)}</span>
               </div>
             </div>
 
@@ -240,7 +240,7 @@ export const CheckoutPage: React.FC = () => {
               className="w-full py-3.5 px-4 rounded-2xl bg-gradient-to-r from-brand-500 to-amber-500 hover:from-brand-600 hover:to-amber-600 text-white font-extrabold text-xs shadow-glow-orange hover:scale-[1.02] transition-all flex items-center justify-center gap-2"
             >
               <ShieldCheck className="w-4 h-4" />
-              {loading ? 'Placing Order...' : `Pay & Place Order ($${summary.total.toFixed(2)})`}
+              {loading ? 'Placing Order...' : `Pay & Place Order (₹${summary.total.toFixed(2)})`}
             </button>
 
             <p className="text-[10px] text-center text-zinc-500">
