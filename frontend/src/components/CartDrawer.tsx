@@ -88,7 +88,7 @@ export const CartDrawer: React.FC = () => {
                           <Trash2 className="w-3.5 h-3.5" />
                         </button>
                       </div>
-                      <p className="text-xs font-black text-brand-400 mt-0.5">${item.price.toFixed(2)}</p>
+                      <p className="text-xs font-black text-brand-400 mt-0.5">₹{item.price.toFixed(2)}</p>
                     </div>
 
                     {/* Stepper */}
@@ -109,7 +109,7 @@ export const CartDrawer: React.FC = () => {
                         </button>
                       </div>
                       <span className="text-xs font-black text-zinc-100">
-                        ${(item.price * item.quantity).toFixed(2)}
+                        ₹{(item.price * item.quantity).toFixed(2)}
                       </span>
                     </div>
                   </div>
@@ -124,19 +124,19 @@ export const CartDrawer: React.FC = () => {
               <div className="space-y-1.5 text-xs text-zinc-400">
                 <div className="flex justify-between">
                   <span>Subtotal</span>
-                  <span className="font-bold text-zinc-200">${summary.subtotal.toFixed(2)}</span>
+                  <span className="font-bold text-zinc-200">₹{summary.subtotal.toFixed(2)}</span>
                 </div>
                 <div className="flex justify-between">
                   <span>Tax (5%)</span>
-                  <span className="font-bold text-zinc-200">${summary.tax.toFixed(2)}</span>
+                  <span className="font-bold text-zinc-200">₹{summary.tax.toFixed(2)}</span>
                 </div>
                 <div className="flex justify-between">
                   <span>Delivery Fee</span>
-                  <span className="font-bold text-zinc-200">${summary.deliveryFee.toFixed(2)}</span>
+                  <span className="font-bold text-zinc-200">₹{summary.deliveryFee.toFixed(2)}</span>
                 </div>
                 <div className="flex justify-between text-sm font-black text-zinc-100 pt-2 border-t border-zinc-800">
                   <span>Total Payable</span>
-                  <span className="text-brand-400 text-base font-black">${summary.total.toFixed(2)}</span>
+                  <span className="text-brand-400 text-base font-black">₹{summary.total.toFixed(2)}</span>
                 </div>
               </div>
 
