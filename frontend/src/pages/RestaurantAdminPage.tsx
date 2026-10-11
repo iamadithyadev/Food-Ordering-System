@@ -153,7 +153,7 @@ export const RestaurantAdminPage: React.FC = () => {
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
         <div className="bg-zinc-900/90 p-4 rounded-2xl border border-zinc-800 shadow-sm space-y-1">
           <div className="text-[11px] font-bold text-zinc-400 uppercase">Gross Revenue</div>
-          <div className="text-2xl font-black text-emerald-400 font-['Outfit']">${stats.gross_total_revenue.toFixed(2)}</div>
+          <div className="text-2xl font-black text-emerald-400 font-['Outfit']">₹{stats.gross_total_revenue.toFixed(2)}</div>
         </div>
         <div className="bg-zinc-900/90 p-4 rounded-2xl border border-zinc-800 shadow-sm space-y-1">
           <div className="text-[11px] font-bold text-zinc-400 uppercase">Completed Orders</div>
@@ -165,7 +165,7 @@ export const RestaurantAdminPage: React.FC = () => {
         </div>
         <div className="bg-zinc-900/90 p-4 rounded-2xl border border-zinc-800 shadow-sm space-y-1">
           <div className="text-[11px] font-bold text-zinc-400 uppercase">Avg Order Value</div>
-          <div className="text-2xl font-black text-blue-400 font-['Outfit']">${stats.avg_order_value.toFixed(2)}</div>
+          <div className="text-2xl font-black text-blue-400 font-['Outfit']">₹{stats.avg_order_value.toFixed(2)}</div>
         </div>
       </div>
 
@@ -225,12 +225,12 @@ export const RestaurantAdminPage: React.FC = () => {
                   {order.items?.map((item) => (
                     <div key={item.order_item_id} className="flex justify-between font-medium text-zinc-300">
                       <span>{item.name} <span className="font-bold text-zinc-500">x{item.quantity}</span></span>
-                      <span>${(item.price_at_order_time * item.quantity).toFixed(2)}</span>
+                      <span>₹{(item.price_at_order_time * item.quantity).toFixed(2)}</span>
                     </div>
                   ))}
                   <div className="pt-2 border-t border-zinc-800 flex justify-between font-black text-zinc-100">
                     <span>Total Amount</span>
-                    <span className="text-blue-400">${order.total_amount.toFixed(2)}</span>
+                    <span className="text-blue-400">₹{order.total_amount.toFixed(2)}</span>
                   </div>
                 </div>
 
@@ -303,7 +303,7 @@ export const RestaurantAdminPage: React.FC = () => {
                     <span className={`w-2.5 h-2.5 rounded-full ${item.is_veg ? 'bg-emerald-500' : 'bg-red-500'}`} />
                     <h4 className="font-extrabold text-xs text-zinc-100 truncate">{item.name}</h4>
                   </div>
-                  <p className="text-xs font-bold text-blue-400 mt-0.5">${item.price.toFixed(2)}</p>
+                  <p className="text-xs font-bold text-blue-400 mt-0.5">₹{item.price.toFixed(2)}</p>
                   <p className="text-[11px] text-zinc-400">{item.category_name}</p>
                 </div>
 
@@ -367,7 +367,7 @@ export const RestaurantAdminPage: React.FC = () => {
               </div>
 
               <div>
-                <label className="block font-bold text-zinc-300 mb-1">Price ($)</label>
+                <label className="block font-bold text-zinc-300 mb-1">Price (₹)</label>
                 <input
                   type="number"
                   step="0.01"
