@@ -116,7 +116,7 @@ export const OrderHistoryPage: React.FC = () => {
               </div>
 
               <div className="flex items-center justify-between text-xs pt-1">
-                <span className="font-black text-zinc-100 text-sm font-['Outfit']">${order.total_amount.toFixed(2)}</span>
+                <span className="font-black text-zinc-100 text-sm font-['Outfit']">₹{order.total_amount.toFixed(2)}</span>
                 
                 <button
                   onClick={(e) => handleReorder(e, order.order_id)}
