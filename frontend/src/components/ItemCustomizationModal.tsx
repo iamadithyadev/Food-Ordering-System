@@ -115,7 +115,7 @@ export const ItemCustomizationModal: React.FC<ItemCustomizationModalProps> = ({
                         {isSelected && <Check className="w-3.5 h-3.5 text-brand-400" />}
                       </div>
                       <div className="text-[11px] text-zinc-400 mt-1">
-                        {v.price_adjustment > 0 ? `+$${Number(v.price_adjustment).toFixed(2)}` : 'Base price'}
+                        {v.price_adjustment > 0 ? `+₹${Number(v.price_adjustment).toFixed(2)}` : 'Base price'}
                       </div>
                     </button>
                   );
@@ -156,7 +156,7 @@ export const ItemCustomizationModal: React.FC<ItemCustomizationModalProps> = ({
                         </div>
                         <span className="text-xs font-medium">{addon.name}</span>
                       </div>
-                      <span className="text-xs font-bold text-brand-400">+${Number(addon.price).toFixed(2)}</span>
+                      <span className="text-xs font-bold text-brand-400">+₹{Number(addon.price).toFixed(2)}</span>
                     </div>
                   );
                 })}
@@ -189,7 +189,7 @@ export const ItemCustomizationModal: React.FC<ItemCustomizationModalProps> = ({
             className="flex-1 py-3 px-6 rounded-2xl bg-brand-500 hover:bg-brand-600 text-white font-bold text-sm shadow-lg shadow-brand-500/25 transition-all flex items-center justify-between"
           >
             <span>Add Customized Item</span>
-            <span className="font-black text-base">${totalPrice.toFixed(2)}</span>
+            <span className="font-black text-base">₹{totalPrice.toFixed(2)}</span>
           </button>
         </div>
       </div>
